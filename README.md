@@ -33,6 +33,6 @@ Easily restart the game or switch between difficulty levels in one click.
 - **No external dependencies!**
 
 
-[How to setup Python with Visual Studio Code](https://youtu.be/BB0gZFpukJU)
+[How to setup Python with Visual Studio Code]([https://youtu.be/BB0gZFpukJU](https://www.youtube.com/watch?v=zk5qOQBvuK4))
 
 
