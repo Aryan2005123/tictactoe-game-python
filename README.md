@@ -32,7 +32,6 @@ Easily restart the game or switch between difficulty levels in one click.
 - **Tkinter** (comes pre-installed with most Python distributions)
 - **No external dependencies!**
 
-
-[How to setup Python with Visual Studio Code]([https://youtu.be/BB0gZFpukJU](https://www.youtube.com/watch?v=zk5qOQBvuK4))
+[How to setup Python with Visual Studio Code](https://www.youtube.com/watch?v=zk5qOQBvuK4)
 
 
