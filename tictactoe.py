@@ -3,9 +3,6 @@ from tkinter import messagebox
 import random
 import math
 
-# ----------------------------
-# Appearance / base settings
-# ----------------------------
 BG = "#071021"
 CARD = "#000408"
 CARD_SHADOW = "#000407"
@@ -21,9 +18,8 @@ FONT_LABEL = ("Consolas", 18, "bold")
 FONT_SCORE = ("Consolas", 14, "bold")
 FONT_SMALL = ("Consolas", 10)
 
-# ----------------------------
 # Game state
-# ----------------------------
+
 playerX = "X"
 playerO = "O"
 curr_player = playerX
@@ -134,9 +130,9 @@ footer = tk.Label(root, text="Press Esc to exit fullscreen", font=("Consolas", 9
                   bg=BG, fg=SUBTEXT)
 footer.place(relx=0.98, rely=0.98, anchor="se")
 
-# ----------------------------
+
 # Layout & responsive drawing
-# ----------------------------
+
 def redraw_layout(event=None):
     # compute central square for board_canvas inside card_outer (centered)
     w = root.winfo_width()
@@ -157,9 +153,9 @@ def redraw_layout(event=None):
 
 root.bind("<Configure>", redraw_layout)
 
-# ----------------------------
+
 # Grid, marks, hover, and animations
-# ----------------------------
+
 def draw_grid_and_marks():
     board_canvas.delete("all")
     size = min(board_canvas.winfo_width(), board_canvas.winfo_height())
@@ -309,9 +305,9 @@ def place_mark(r, c, player, animate=True):
     draw_mark_in_cell(r, c, animate=True)
     turns_progress_after_move()
 
-# ----------------------------
+
 # Game logic & utilities
-# ----------------------------
+
 def update_scoreboard():
     lbl_x.config(text=f"X: {score_X}")
     lbl_o.config(text=f"O: {score_O}")
@@ -425,9 +421,9 @@ def increment_score_O():
     global score_O
     score_O += 1
 
-# ----------------------------
+
 # AI thinking animation helpers
-# ----------------------------
+
 def start_ai_thinking():
     global ai_thinking, _think_job, _think_dots
     stop_ai_thinking()
@@ -466,9 +462,9 @@ def _perform_ai_move_and_stop_thinking():
     stop_ai_thinking()
     ai_move()
 
-# ----------------------------
+
 # AI (Minimax for hard)
-# ----------------------------
+
 def ai_move():
     global curr_player
     if game_over:
@@ -527,9 +523,8 @@ def minimax(depth, is_maximizing):
                     best = min(best, score)
         return best
 
-# ----------------------------
 # Reset / New game
-# ----------------------------
+
 def new_game():
     global turns, game_over, curr_player, mark_ids, board_state, win_anim_job
     stop_ai_thinking()
@@ -556,11 +551,10 @@ def new_game():
     draw_grid_and_marks()
     update_scoreboard()
 
-# ----------------------------
-# initialize
-# ----------------------------
+
 root.update_idletasks()
 redraw_layout()
 new_game()
+
 
 root.mainloop()
